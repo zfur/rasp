@@ -1,0 +1,11 @@
+
+syntax on
+:set encoding=utf8
+:set fileencoding=utf8
+:set textwidth=112
+:set tabstop=2
+:set softtabstop=2
+:set ai shiftwidth=2
+:set t_Co=256
+:set expandtab
+colorscheme xoria256

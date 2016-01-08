@@ -1,0 +1,15 @@
+[Match]
+MACAddress=
+#Driver=r8188eu
+#Path=pci-0000:02:00.0-*
+Type=wlan
+Virtualization=no
+Host=
+#Architecture=x86-64
+
+[Link]
+Name=
+#MTUBytes=1450
+#BitsPerSecond=10M
+#WakeOnLan=magic
+MACAddress=

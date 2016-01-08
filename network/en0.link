@@ -1,0 +1,15 @@
+[Match]
+MACAddress=
+Driver=smsc95xx
+#Path=pci-0000:02:00.0-*
+Type=ether
+Virtualization=no
+Host=
+#Architecture=x86-64
+
+[Link]
+Name=
+#MTUBytes=1480
+#BitsPerSecond=10M
+#WakeOnLan=magic
+MACAddress=
