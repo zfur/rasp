@@ -1,4 +1,4 @@
-" This file must stay in the /etc/ path.
+" This file must stay in the /etc/ path. 
 
 " All system-wide defaults are set in $VIMRUNTIME/archlinux.vim (usually just
 " /usr/share/vim/vimfiles/archlinux.vim) and sourced by the call to :runtime
