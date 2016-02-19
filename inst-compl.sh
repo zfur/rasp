@@ -15,15 +15,16 @@ source /root/rasp/functions.cfg
 if [[ -z "$(pacman -Qs dialog)" ]] ; then
     read -n1 -rsp $'Bienvenido al instalador de Arch Linux para Raspberry Pi 2, creado por zFur. Presione
     cualquier tecla para continuar o, si lo prefiere, puede salir de este asistente con la combinación de teclas
-    Ctrl+C.\n' ;
+    ctrl + c.\n' ;
     printf "\n" ;
     read -n1 -rsp $'Ahora se instalará el paquete dialog para que pueda usar una interfaz TUI (terminal user
     interface). Pulse cualquier tecla para continuar o, si lo prefiere, salga de este asistente con la
-    combinación de teclas Ctrl+C.\n\n' ;
+    combinación de teclas ctrl + c.\n\n' ;
     pacman -S dialog ;
     while [[ -z "$(pacman -Qs dialog)" ]] ; do
       read -n1 -rsp $'No ha sido posible instalar el paquete dialog. Se volverá a intentar después de que pulse
-      cualquier tecla.\n' ;
+      cualquier tecla. Recuerde que puede salir en cualquier momento de este programa con la combinación de
+      teclas ctrl + c.\n' ;
       pacman -S dialog ;
     done
   else
@@ -186,8 +187,9 @@ if [ ${packets_diff} -eq 0 ] ; then
   elif [ ${packets_none} -eq 0 ] ; then
     dialog  --backtitle "$backtitle_var" \
             --title     "Selección de software básico" --clear --trim \
-            --msgbox    "De entre los paquetes que ha seleccionado, sólo se instalarán: ${packets_bas_v// /, }, \
-                        puesto que el resto ya se encuentran instalados en su sistema." 0 0 ;
+            --msgbox    "De entre los paquetes que ha seleccionado, sólo se instalarán:
+                        ${packets_bas_v// /, }, puesto que el resto ya se encuentran instalados en su
+                        sistema." 0 0 ;
     pacman -S $packets_bas_v ;
   else
     dialog  --backtitle "$backtitle_var" \
@@ -305,7 +307,8 @@ while [ "$response" == "0" ] ; do
     fi
     pwrd_arr=( $(dialog --backtitle     "$backtitle_var" \
                         --title         "" --clear --trim \
-                        --passwordform  "Error en la introducción de la contraseña debido a:\n${pass_f}Vuelva a introducir la contraseña desea para el usuario ${user_name}." 0 0 0 \
+                        --passwordform  "Error en la introducción de la contraseña debido a:\n${pass_f}. Vuelva
+                                        a introducir la contraseña desea para el usuario ${user_name}." 0 0 0 \
                   "Introduzca la contraseña:"           1 1 ""  1 36  11  43  \
                   "Vuelva a introducir la contraseña:"  2 1 ""  2 36  11  43  3>&1 1>&2 2>&3) );
   done
